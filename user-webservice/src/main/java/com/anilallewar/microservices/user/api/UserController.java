@@ -1,16 +1,11 @@
 package com.anilallewar.microservices.user.api;
 
 import java.util.List;
-import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import com.anilallewar.microservices.user.Business.UserBusiness;
+import com.anilallewar.microservices.user.Business.IUserBusiness;
 import com.anilallewar.microservices.user.helpers.ExtractUrl;
 import com.anilallewar.microservices.user.helpers.UrlKeyValue;
-import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -31,14 +26,14 @@ import javax.servlet.http.HttpServletRequest;
 public class UserController {
 
 
-     private  final UserBusiness userBusiness;
+     private  final IUserBusiness IUserBusiness;
 	@Value("${mail.domain ?: google.com}")
 	private String mailDomain;
 
     @Autowired
-	UserController(UserBusiness userBusiness)
+	UserController(IUserBusiness IUserBusiness)
 	{
-		this.userBusiness=userBusiness;
+		this.IUserBusiness = IUserBusiness;
 	}
 
 	/**
@@ -65,7 +60,7 @@ public class UserController {
 	)
 	{
 		final UrlKeyValue urlKeyValue= ExtractUrl.extractKeyValueFromUri(request.getQueryString());
-		 List<UserDTO> userDTOList =  userBusiness.findUser(urlKeyValue.getKey(),"=",urlKeyValue.getValue());
+		 List<UserDTO> userDTOList =  IUserBusiness.findUser(urlKeyValue.getKey(),"=",urlKeyValue.getValue());
 
 
         return userDTOList;

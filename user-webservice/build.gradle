@@ -61,14 +61,13 @@ dependencies {
   //  compile('org.modelmapper:modelmapper:1.1.0')
     compile 'com.github.rozidan:modelmapper-spring-boot-starter:1.0.0'
 
+    // flyway for database version conrol
+    compile "org.flywaydb:flyway-core:5.0.7"
+
 
     // lombok
     compileOnly "org.projectlombok:lombok:1.16.16"
 
-    // Spring OAuth2 security
-    compile("org.springframework.boot:spring-boot-starter-security")
-    compile("org.springframework.security.oauth:spring-security-oauth2")
-    compile("org.springframework.security:spring-security-jwt")
     
     // Eureka client
     compile('org.springframework.cloud:spring-cloud-starter-eureka')

@@ -1,14 +1,22 @@
-logging:
-  level:
-     org:
-       springframework:
-         security: DEBUG
-
-server:
-  port: 8081
-security:
-    basic:
-      enabled: false
-    user:
-      name: user
-      password: user
+spring:
+    datasource:
+            dataSourceClassName: org.h2.jdbcx.JdbcDataSource
+            url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+    h2:
+        console:
+          enabled: true
+          path: /console
+          settings:
+            trace: true
+            web-allow-others: true
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        database: H2
+        openInView: false
+        show_sql: true
+        hibernate:
+            ddl-auto: none
+            naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+        properties:
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: true
