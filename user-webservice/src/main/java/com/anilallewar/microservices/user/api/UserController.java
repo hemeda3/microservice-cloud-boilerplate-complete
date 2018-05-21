@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.anilallewar.microservices.user.api.Business.UserBusiness;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,13 +25,15 @@ import com.anilallewar.microservices.user.dto.UserDTO;
 public class UserController {
 
 	private static final Logger LOGGER = Logger.getLogger(UserController.class.getName());
-
+    private  final UserBusiness userBusiness;
 	@Value("${mail.domain ?: google.com}")
 	private String mailDomain;
 
-	private List<UserDTO> users = Arrays.asList(new UserDTO("Anil", "Allewar", "1", "anil.allewar@" + mailDomain),
-			new UserDTO("Stefan", "Weber", "2", "stefan.weber@" + mailDomain),
-			new UserDTO("John", "Snow", "3", "john.snow@" + mailDomain));
+
+	UserController(UserBusiness userBusiness)
+	{
+		this.userBusiness=userBusiness;
+	}
 
 	/**
 	 * Return all users
@@ -39,7 +42,8 @@ public class UserController {
 	 */
 	@RequestMapping(method = RequestMethod.GET, headers = "Accept=application/json")
 	public List<UserDTO> getUsers() {
-		return users;
+
+		return  null;
 	}
 
 	/**
@@ -49,18 +53,10 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping(value = "{userName}", method = RequestMethod.GET, headers = "Accept=application/json")
-	public UserDTO getUserByUserName(@PathVariable("userName") String userName) {
-		UserDTO userDtoToReturn = null;
-		for (UserDTO currentUser : users) {
-			if (currentUser.getUserName().equalsIgnoreCase(userName)) {
-				userDtoToReturn = currentUser;
-				if (LOGGER.isLoggable(Level.INFO)) {
-					LOGGER.info(String.format("Found matching user: %s", userDtoToReturn.toString()));
-				}
-				break;
-			}
-		}
-
+	public UserDTO getUserByUserName(@PathVariable("key") String key,
+	                                 @PathVariable("value") String value)
+	{
+		UserDTO userDtoToReturn =  userBusiness.findUser(key,"=",value);
 		return userDtoToReturn;
 	}
 }

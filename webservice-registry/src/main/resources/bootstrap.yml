@@ -4,11 +4,13 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888
-      
----
 
-spring:
-  profiles: docker
-  cloud:
-     config:
-        uri: http://configserver:8888
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
+    registerWithEureka: false
+    fetchRegistry: false

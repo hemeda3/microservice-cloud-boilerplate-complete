@@ -3,3 +3,12 @@ logging:
      org:
        springframework:
          security: DEBUG
+
+server:
+  port: 8081
+security:
+    basic:
+      enabled: false
+    user:
+      name: user
+      password: user
