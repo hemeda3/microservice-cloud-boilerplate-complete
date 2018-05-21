@@ -1,6 +1,6 @@
-package com.anilallewar.microservices.user.api.SearchSpecefication;
+package com.anilallewar.microservices.user.SearchSpecefication;
 
-import com.anilallewar.microservices.user.api.User;
+import com.anilallewar.microservices.user.userpojos.User;
 import org.springframework.data.jpa.domain.Specification;
 
 import javax.persistence.criteria.CriteriaBuilder;

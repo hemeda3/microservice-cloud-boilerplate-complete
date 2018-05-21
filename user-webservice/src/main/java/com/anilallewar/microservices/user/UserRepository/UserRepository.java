@@ -1,11 +1,10 @@
-package com.anilallewar.microservices.user.api.UserRepository;
-import com.anilallewar.microservices.user.api.User;
+package com.anilallewar.microservices.user.UserRepository;
+import com.anilallewar.microservices.user.userpojos.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
+@Repository
 public interface UserRepository extends  JpaRepository<User, Long>, JpaSpecificationExecutor<User> {
 
 }

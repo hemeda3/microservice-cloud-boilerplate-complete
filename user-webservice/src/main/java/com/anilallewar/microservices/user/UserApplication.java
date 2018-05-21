@@ -25,7 +25,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
  * @author anilallewar
  */
 @SpringBootApplication
-@EnableEurekaClient
 public class UserApplication {
 
 	public static void main(String[] args) {

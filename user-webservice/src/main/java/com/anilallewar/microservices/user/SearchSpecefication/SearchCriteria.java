@@ -1,6 +1,4 @@
-package com.anilallewar.microservices.user.api.SearchSpecefication;
-
-import lombok.Data;
+package com.anilallewar.microservices.user.SearchSpecefication;
 
 
 public class SearchCriteria {

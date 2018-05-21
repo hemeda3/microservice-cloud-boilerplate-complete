@@ -27,17 +27,10 @@ buildscript {
     }
 }
 
-ext {
-    generatedMapperSourcesDir = "${buildDir}/generated-src/mapstruct/main"
-
-}
 task createWrapper(type: Wrapper) {
     gradleVersion = '3.5'
 }
 
-configurations {
-    mapstruct
-}
 // Used by the Docker gradle plugin, group refers to the account under which the docker image is created
 group = 'anilallewar'
 mainClassName = 'com.anilallewar.microservices.user.UserApplication'
@@ -63,10 +56,11 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("com.h2database:h2")
 
+
     // model mapper DTO to entity and else
-    compile('org.modelmapper:modelmapper:1.1.0')
-    compile( 'org.mapstruct:mapstruct:1.1.0.Final' )
-    mapstruct( 'org.mapstruct:mapstruct-processor:1.1.0.Final' )
+  //  compile('org.modelmapper:modelmapper:1.1.0')
+    compile 'com.github.rozidan:modelmapper-spring-boot-starter:1.0.0'
+
 
     // lombok
     compileOnly "org.projectlombok:lombok:1.16.16"
