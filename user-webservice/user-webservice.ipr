@@ -1245,6 +1245,24 @@
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.9.9/29a9fcf32288cd678b37b372974786f731b982d1/joda-time-2.9.9-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Gradle: log4j:log4j:1.2.17">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.17/5af35056b4d257e4b64b9e8069c0746e8b08629f/log4j-1.2.17.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.17/677abe279b68c5e7490d6d50c6951376238d7d3e/log4j-1.2.17-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: net.jpountz.lz4:lz4:1.2.0">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.jpountz.lz4/lz4/1.2.0/cd301e9a481eae5b68c53267100aeca43b782b9f/lz4-1.2.0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.jpountz.lz4/lz4/1.2.0/8ebc24fe8c0dfded99582ecb5baac7a49f23a954/lz4-1.2.0-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Gradle: org.antlr:antlr-runtime:3.4">
       <CLASSES>
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.4/8f011408269a8e42b8548687e137d8eeb56df4b4/antlr-runtime-3.4.jar!/" />
@@ -1288,6 +1306,51 @@
       <JAVADOC />
       <SOURCES>
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.6/57cc0a7af46d66754e632bddc558a913b9e66ac3/httpcore-4.4.6-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: org.apache.kafka:kafka-clients:0.9.0.0">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-clients/0.9.0.0/8c85b7de6c61ceae39b2a3d4fa055b0850325c14/kafka-clients-0.9.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-clients/0.9.0.0/685f9c459d4194e4371b009c719e8cd774b3c674/kafka-clients-0.9.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: org.apache.kafka:kafka-log4j-appender:0.9.0.0">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-log4j-appender/0.9.0.0/9c2407ab86e5711e7f9782bb76fa6426330ce52d/kafka-log4j-appender-0.9.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-log4j-appender/0.9.0.0/902bdd6a551f82fbcf7061da136c7f9f8f3f1c34/kafka-log4j-appender-0.9.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: org.apache.logging.log4j:log4j-api:2.7">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.7/8de00e382a817981b737be84cb8def687d392963/log4j-api-2.7.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.7/87b0c1c6bce3b1b251ba72464483e46cffaa1b5b/log4j-api-2.7-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: org.apache.logging.log4j:log4j-core:2.7">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.7/a3f2b4e64c61a7fc1ed8f1e5ba371933404ed98a/log4j-core-2.7.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.7/5dc93d7040d2c19b84335b139c16c93473c5899/log4j-core-2.7-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: org.apache.logging.log4j:log4j-slf4j-impl:2.7">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-slf4j-impl/2.7/382b070836b8940a02d28c936974db95e9bfc3a4/log4j-slf4j-impl-2.7.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-slf4j-impl/2.7/b585a7ecde86df1d4f2be1e0fe0519539c79fd4f/log4j-slf4j-impl-2.7-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:8.5.14">
@@ -1542,6 +1605,15 @@
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/962153db4a9ea71b79d047dfd1b2a0d80d8f4739/slf4j-api-1.7.25-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Gradle: org.slf4j:slf4j-log4j12:1.7.25">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.7.25/110cefe2df103412849d72ef7a67e4e91e4266b4/slf4j-log4j12-1.7.25.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.7.25/d6f907c4254a49f40fa46005b65bc97261ad9e46/slf4j-log4j12-1.7.25-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Gradle: org.springframework.boot:spring-boot-actuator:1.5.3.RELEASE">
       <CLASSES>
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-actuator/1.5.3.RELEASE/8c5ac2ccbdfb9a286b37b6c2b8df3d222bffce01/spring-boot-actuator-1.5.3.RELEASE.jar!/" />
@@ -1594,6 +1666,15 @@
       <JAVADOC />
       <SOURCES>
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-jdbc/1.5.3.RELEASE/2275065a545f10d8fe0605ffa868dbb703418a11/spring-boot-starter-jdbc-1.5.3.RELEASE-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: org.springframework.boot:spring-boot-starter-log4j2:1.5.3.RELEASE">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-log4j2/1.5.3.RELEASE/53d65d26f90bf8a85f0ca23bb668d778f86353c3/spring-boot-starter-log4j2-1.5.3.RELEASE.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-log4j2/1.5.3.RELEASE/f3c69b47a2f3e8ddfe88d9668dfc8e9c25edc191/spring-boot-starter-log4j2-1.5.3.RELEASE-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Gradle: org.springframework.boot:spring-boot-starter-logging:1.5.3.RELEASE">
@@ -1900,6 +1981,15 @@
       <JAVADOC />
       <SOURCES>
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/4.3.8.RELEASE/7c29037939a07382d04b326407a589704f5e9acd/spring-webmvc-4.3.8.RELEASE-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Gradle: org.xerial.snappy:snappy-java:1.1.1.7">
+      <CLASSES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.xerial.snappy/snappy-java/1.1.1.7/33b6965e9364145972035c30a45a996aad2bf789/snappy-java-1.1.1.7.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.xerial.snappy/snappy-java/1.1.1.7/99ad611939e0d2c5d539fe09fb97f761824f5137/snappy-java-1.1.1.7-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Gradle: org.yaml:snakeyaml:1.17">

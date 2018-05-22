@@ -31,6 +31,8 @@ task createWrapper(type: Wrapper) {
     gradleVersion = '3.5'
 }
 
+
+
 // Used by the Docker gradle plugin, group refers to the account under which the docker image is created
 group = 'anilallewar'
 mainClassName = 'com.anilallewar.microservices.user.UserApplication'
@@ -51,14 +53,22 @@ dependencyManagement {
 dependencies {
     // Basic Spring boot with config client
     compile('org.springframework.cloud:spring-cloud-starter-config')
-    compile("org.springframework.boot:spring-boot-starter-web")    
+    compile("org.springframework.boot:spring-boot-starter-web")    {
+        exclude module : 'spring-boot-starter-logging'
+    }
+    compile('org.springframework.boot:spring-boot-starter-log4j2')
+
     compile("org.springframework.boot:spring-boot-starter-actuator")
-    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa") {
+        exclude module : 'spring-boot-starter-logging'
+
+    }
     compile("com.h2database:h2")
 
+    // kafka appender
+    compile 'org.apache.kafka:kafka-log4j-appender:0.9.0.0'
 
     // model mapper DTO to entity and else
-  //  compile('org.modelmapper:modelmapper:1.1.0')
     compile 'com.github.rozidan:modelmapper-spring-boot-starter:1.0.0'
 
     // flyway for database version conrol

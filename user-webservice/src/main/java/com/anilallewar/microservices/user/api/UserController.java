@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * REST endpoint for the user functionality
  * 
- * @author anilallewar
+ * @author Ahmed
  *
  */
 @Slf4j(topic = "users-logs")
@@ -43,26 +43,19 @@ public class UserController {
 	}
 
 
-	/**
-	 * Return user associated with specific user name
-	 * 
-	 * //@param key
-	 * //@param value
-	 * @return List<UserDTO>
-	 */
 	@GetMapping
-	public List<UserDTO> getUserByUserName(
+	 ResponseEntity<List<UserDTO>> findUsers(
 			HttpServletRequest request
 	)
 	{
 		final UrlKeyValue urlKeyValue= ExtractUrl.extractKeyValueFromUri(request.getQueryString());
 		 List<UserDTO> userDTOList =  IUserBusiness.findUser(urlKeyValue.getKey(),"=",urlKeyValue.getValue());
 
+        return new ResponseEntity<List<UserDTO>>(userDTOList, HttpStatus.OK);
 
-        return userDTOList;
 	}
 	@PostMapping
-	ResponseEntity<UserDTO> add(@RequestBody UserDTO userDTO) {
+	ResponseEntity<UserDTO> saveUser(@RequestBody UserDTO userDTO) {
 
       UserDTO savedUser= IUserBusiness.saveUser(userDTO);
  		return new ResponseEntity<UserDTO>(savedUser, HttpStatus.OK);

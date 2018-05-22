@@ -8,6 +8,7 @@ import com.anilallewar.microservices.user.exceptions.ErrorMessages;
 import com.anilallewar.microservices.user.exceptions.InputValidationException;
 import com.anilallewar.microservices.user.exceptions.ResourceNotFoundException;
 import com.anilallewar.microservices.user.userpojos.User;
+import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ import java.util.stream.Collectors;
 
 @Transactional(readOnly = true)
 @Component
-@Slf4j
+@Log4j2
 public class UserBusinessImp  implements IUserBusiness{
 
     private final UserRepository userRepository;
@@ -59,8 +60,7 @@ public class UserBusinessImp  implements IUserBusiness{
                      .map( user -> modelMapper.map(user,UserDTO.class))
                  .collect(Collectors.toList());
 
-         log.info("users findall"+userDTOList2);
-        return userDTOList2;
+         return userDTOList2;
   }
 
 @Override
