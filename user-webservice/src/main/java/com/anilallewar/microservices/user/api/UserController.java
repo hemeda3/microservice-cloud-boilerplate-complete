@@ -5,9 +5,13 @@ import java.util.List;
 import com.anilallewar.microservices.user.Business.IUserBusiness;
 import com.anilallewar.microservices.user.helpers.ExtractUrl;
 import com.anilallewar.microservices.user.helpers.UrlKeyValue;
+import com.anilallewar.microservices.user.userpojos.User;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.anilallewar.microservices.user.dto.UserDTO;
@@ -27,25 +31,17 @@ public class UserController {
 
 
      private  final IUserBusiness IUserBusiness;
+     private final ModelMapper modelMapper;
 	@Value("${mail.domain ?: google.com}")
 	private String mailDomain;
 
     @Autowired
-	UserController(IUserBusiness IUserBusiness)
+	UserController(IUserBusiness IUserBusiness, ModelMapper modelMapper)
 	{
 		this.IUserBusiness = IUserBusiness;
+		this.modelMapper=modelMapper;
 	}
 
-	/**
-	 * Return all users
-	 * 
-	 * @return
-	 */
-	@RequestMapping(method = RequestMethod.GET, headers = "Accept=application/json")
-	public List<UserDTO> getUsers() {
-
-		return  null;
-	}
 
 	/**
 	 * Return user associated with specific user name
@@ -64,5 +60,12 @@ public class UserController {
 
 
         return userDTOList;
+	}
+	@PostMapping
+	ResponseEntity<UserDTO> add(@RequestBody UserDTO userDTO) {
+
+      UserDTO savedUser= IUserBusiness.saveUser(userDTO);
+ 		return new ResponseEntity<UserDTO>(savedUser, HttpStatus.OK);
+
 	}
 }

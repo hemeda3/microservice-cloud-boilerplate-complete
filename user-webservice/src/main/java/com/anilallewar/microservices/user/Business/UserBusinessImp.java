@@ -4,18 +4,26 @@ import com.anilallewar.microservices.user.SearchSpecefication.SearchCriteria;
 import com.anilallewar.microservices.user.SearchSpecefication.UserSpecification;
 import com.anilallewar.microservices.user.UserRepository.UserRepository;
 import com.anilallewar.microservices.user.dto.UserDTO;
+import com.anilallewar.microservices.user.exceptions.ErrorMessages;
+import com.anilallewar.microservices.user.exceptions.InputValidationException;
 import com.anilallewar.microservices.user.exceptions.ResourceNotFoundException;
 import com.anilallewar.microservices.user.userpojos.User;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.ObjectUtils;
 
-import java.io.IOException;
+ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
+
+@Transactional(readOnly = true)
 @Component
 @Slf4j
 public class UserBusinessImp  implements IUserBusiness{
@@ -37,26 +45,33 @@ public class UserBusinessImp  implements IUserBusiness{
         UserSpecification userSpecification =
                 new UserSpecification( new SearchCriteria(key, operation, value));
 
-     List<User>   userList2= userRepository.findAll(userSpecification);
-      //  List<User>  userList= new ArrayList<>();
-      //  userList.add(User.builder().id(1L).name("ahmed").role("foo").build());
-  log.info(userRepository.save(User.builder().name("nameaa").role("role").build()).toString());
-
-        List<UserDTO> userDTOList =userRepository.findAll().stream().map( user -> modelMapper.map(user,UserDTO.class))
-                .collect(Collectors.toList());
-         boolean throwException = true;
-
-         if (throwException) {
-        //     throw new ResourceNotFoundException(333333L,"This is my ResourceNotFoundException");
+         if(ObjectUtils.isEmpty(key))
+         {
+           throw new InputValidationException(key);
          }
-         log.info("users findall"+userRepository.findAll().toString());
-        return userDTOList;
+         else
+         if(ObjectUtils.isEmpty(value))
+         {
+             throw new InputValidationException(value);
+         }
 
+             List<UserDTO> userDTOList2 =userRepository.findAll(userSpecification).stream()
+                     .map( user -> modelMapper.map(user,UserDTO.class))
+                 .collect(Collectors.toList());
 
+         log.info("users findall"+userDTOList2);
+        return userDTOList2;
+  }
 
+@Override
+@Transactional
+    public UserDTO saveUser(UserDTO user)  {
 
-
+        User userSaved=userRepository.save(modelMapper.map(user,User.class));
+        UserDTO userDTO= modelMapper.map(userSaved,UserDTO.class);
+       return  userDTO;
     }
+
 
 }
 
