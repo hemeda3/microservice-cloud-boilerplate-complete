@@ -11,10 +11,11 @@
         <Appender type="Console" name="STDOUT">
             <Layout type="PatternLayout" pattern="${defaultpattern}"/>
         </Appender>
-        <Appender type="File" name="File" fileName="/home/ubuntu/app.log">
+        <Appender type="File" name="File" fileName="${filename}">
             <Layout type="PatternLayout" pattern="${defaultpattern}" />
         </Appender>
-        <Socket name="socket" host="localhost" port="9200" >
+        <Socket name="socket" host="localhost" port="5400"
+ reconnectionDelayMillis="5000">
             <Layout type="PatternLayout" pattern="${defaultpattern}" />
         </Socket>
     </Appenders>

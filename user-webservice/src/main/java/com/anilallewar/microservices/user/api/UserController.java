@@ -6,6 +6,7 @@ import com.anilallewar.microservices.user.Business.IUserBusiness;
 import com.anilallewar.microservices.user.helpers.ExtractUrl;
 import com.anilallewar.microservices.user.helpers.UrlKeyValue;
 import com.anilallewar.microservices.user.userpojos.User;
+import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ import javax.servlet.http.HttpServletRequest;
  * @author Ahmed
  *
  */
-@Slf4j(topic = "users-logs")
+@Log4j2(topic = "users-logs")
 @RestController
 @RequestMapping("/users")
 public class UserController {

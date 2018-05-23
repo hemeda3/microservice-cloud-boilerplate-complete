@@ -56,18 +56,27 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")    {
         exclude module : 'spring-boot-starter-logging'
     }
-    compile('org.springframework.boot:spring-boot-starter-log4j2')
 
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.springframework.boot:spring-boot-starter-data-jpa") {
-        exclude module : 'spring-boot-starter-logging'
+       exclude module : 'spring-boot-starter-logging'
 
     }
+    compile('org.springframework.boot:spring-boot-starter-log4j2')
+
     compile("com.h2database:h2")
 
-    // kafka appender
-    compile 'org.apache.kafka:kafka-log4j-appender:0.9.0.0'
+    // zipkin
+    compile 'org.springframework.cloud:spring-cloud-sleuth-zipkin'
 
+    // sleuth
+    compile 'org.springframework.cloud:spring-cloud-starter-sleuth'
+    // kafka appender
+   // compile 'org.apache.kafka:kafka-log4j-appender:0.9.0.0'
+    // log back
+    compile 'net.logstash.logback:logstash-logback-encoder:4.9'
+    compile'ch.qos.logback:logback-classic:1.2.3'
+    compile'ch.qos.logback:logback-core:1.2.3'
     // model mapper DTO to entity and else
     compile 'com.github.rozidan:modelmapper-spring-boot-starter:1.0.0'
 
