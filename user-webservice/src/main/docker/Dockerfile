@@ -1,27 +1,9 @@
-#-----------------------------------------------------------------------------------------------------
-# User Service
-#-----------------------------------------------------------------------------------------------------
-FROM openjdk:8u121-jdk-alpine
+FROM java:openjdk-8-jdk-alpine
+VOLUME /tmp
+VOLUME /logs
 
-MAINTAINER Anil Allewar <anilallewar@yahoo.co.in>
-
-# Keep consistent with build.gradle 
 ENV APP_JAR_NAME basic-user-webservice
 ENV APP_JAR_VERSION 0.0.1
-
-# Install curl
-RUN apk --update add curl bash && \
-	rm -rf /var/cache/apk/*
-	
-RUN mkdir /app
-
-ADD ${APP_JAR_NAME}-${APP_JAR_VERSION}.jar /app/ 
-ADD run.sh /app/
-RUN chmod +x /app/run.sh 
-
-WORKDIR /app
-
-EXPOSE 8080
-
-ENTRYPOINT ["/bin/bash","-c"]
-CMD ["/app/run.sh"]
+ADD ${APP_JAR_NAME}-${APP_JAR_VERSION}.jar /app/
+RUN sh -c 'touch /app.jar'
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
