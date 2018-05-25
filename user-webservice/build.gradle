@@ -10,7 +10,7 @@ apply plugin: 'eclipse'
 buildscript {
 	project.ext {
          springBootVersion = '1.5.3.RELEASE'
-         jarName = 'basic-user-webservice'
+         jarName = 'basic-user-webservice-v1'
          versionName = '0.0.1'
          gradleDockerVersion = '1.2'
          lombokVersion: '1.16.16'
@@ -34,7 +34,7 @@ task createWrapper(type: Wrapper) {
 
 
 // Used by the Docker gradle plugin, group refers to the account under which the docker image is created
-group = 'anilallewar'
+group = 'ahmed'
 mainClassName = 'com.anilallewar.microservices.user.UserApplication'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -108,25 +108,24 @@ jar {
 * Dockerfile.  
 */
 task buildDocker(type: Docker, dependsOn: build) {
-  push = false
-  applicationName = jar.baseName
-  tagVersion = jar.version
-  dockerfile = file('src/main/docker/Dockerfile')
-  doFirst {
-    // Copy the built fat jar to the Docker plugin staging directory
-    copy {
-      from jar
-      into stageDir
+    push = false
+    applicationName = jar.baseName
+    tagVersion = jar.version
+    dockerfile = file('src/main/docker/Dockerfile')
+    doFirst {
+        // Copy the built fat jar to the Docker plugin staging directory
+        copy {
+            from jar
+            into stageDir
+        }
+        // Copy the run.sh file to the Docker plugin staging directory
+        copy {
+            from "${project.buildDir}/resources/main/run.sh"
+            into stageDir
+        }
     }
-    // Copy the run.sh file to the Docker plugin staging directory
-    copy {
-      from "${project.buildDir}/resources/main/run.sh"
-      into stageDir
-    }
-  }
 }
 
 run {
     jvmArgs = ['-Xdebug', '-Xrunjdwp:server=y,transport=dt_socket,address=4200,suspend=n','-Dspring.profiles.active=default']
 }
-

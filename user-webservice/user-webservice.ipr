@@ -468,10 +468,10 @@
         <entry key="$PROJECT_DIR$" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../../spring-boot-microservices/api-gateway" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../../spring-boot-microservices/user-webservice" value="PREVIEW" />
-        <entry key="$USER_HOME$/projects/coding/flutter/coding/couchbaselite" value="PREVIEW" />
-        <entry key="$USER_HOME$/projects/coding/flutter/newplugins/mygenericplugin" value="PREVIEW" />
-        <entry key="$USER_HOME$/projects/coding/spring-boot-jaxws-demo" value="PREVIEW" />
-        <entry key="$USER_HOME$/projects/coding/trafficserver" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../coding/flutter/coding/couchbaselite" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../coding/flutter/newplugins/mygenericplugin" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../coding/spring-boot-jaxws-demo" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../coding/trafficserver" value="PREVIEW" />
       </map>
     </option>
   </component>
@@ -573,30 +573,6 @@
   </component>
   <component name="ProjectCodeStyleConfiguration">
     <code_scheme name="Project" version="173">
-      <DBN-PSQL>
-        <case-options enabled="false">
-          <option name="KEYWORD_CASE" value="lower" />
-          <option name="FUNCTION_CASE" value="lower" />
-          <option name="PARAMETER_CASE" value="lower" />
-          <option name="DATATYPE_CASE" value="lower" />
-          <option name="OBJECT_CASE" value="preserve" />
-        </case-options>
-        <formatting-settings enabled="false" />
-      </DBN-PSQL>
-      <DBN-SQL>
-        <case-options enabled="false">
-          <option name="KEYWORD_CASE" value="lower" />
-          <option name="FUNCTION_CASE" value="lower" />
-          <option name="PARAMETER_CASE" value="lower" />
-          <option name="DATATYPE_CASE" value="lower" />
-          <option name="OBJECT_CASE" value="preserve" />
-        </case-options>
-        <formatting-settings enabled="false">
-          <option name="STATEMENT_SPACING" value="one_line" />
-          <option name="CLAUSE_CHOP_DOWN" value="chop_down_if_statement_long" />
-          <option name="ITERATION_ELEMENTS_WRAPPING" value="chop_down_if_not_single" />
-        </formatting-settings>
-      </DBN-SQL>
       <DBN-PSQL>
         <case-options enabled="false">
           <option name="KEYWORD_CASE" value="lower" />

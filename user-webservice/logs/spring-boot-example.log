@@ -1,0 +1,6 @@
+logdate=(2018-05-24T01:14:21,459) thread=(main)) level=(WARN) loggerclass=(com.anilallewar.microservices.user.UserApplication) message=(user service warn)
+logdate=(2018-05-24T01:14:21,464) thread=(main)) level=(ERROR) loggerclass=(com.anilallewar.microservices.user.UserApplication) message=(user service error)
+logdate=(2018-05-24T01:14:21,464) thread=(main)) level=(INFO) loggerclass=(com.anilallewar.microservices.user.UserApplication) message=(user service info)
+logdate=(2018-05-24T01:15:45,885) thread=(main)) level=(WARN) loggerclass=(com.anilallewar.microservices.user.UserApplication) message=(user service warn)
+logdate=(2018-05-24T01:15:45,890) thread=(main)) level=(ERROR) loggerclass=(com.anilallewar.microservices.user.UserApplication) message=(user service error)
+logdate=(2018-05-24T01:15:45,890) thread=(main)) level=(INFO) loggerclass=(com.anilallewar.microservices.user.UserApplication) message=(user service info)
