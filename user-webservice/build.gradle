@@ -120,10 +120,11 @@ task buildDocker(type: Docker, dependsOn: build) {
         }
         // Copy the run.sh file to the Docker plugin staging directory
         copy {
-            from "${project.buildDir}/resources/main/run.sh"
+            from "${project.buildDir}/resources/main/filebeat.yml"
             into stageDir
         }
     }
+
 }
 
 run {
