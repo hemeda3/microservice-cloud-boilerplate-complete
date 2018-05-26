@@ -1,13 +1,18 @@
-# Builds the User Service using Spring Boot with Docker
+# Builds the User Service Docker Image on Docker Hub
 
 FROM frolvlad/alpine-oraclejdk8:slim
 
 MAINTAINER Gary A. Stafford <garystafford@rochester.rr.com>
 ENV REFRESHED_AT 2016-08-28 16:45:13
 
-VOLUME /tmp
-ADD user-service-0.1.0.jar /app.jar
-RUN sh -c 'touch /app.jar' \
+# install jar from GitHub
+ENV GITHUB_REPO=https://github.com/garystafford/microservice-docker-demo-user/raw/build-artifacts
+ENV APP_FILE=user-service-0.1.0.jar
+
+RUN set -ex \
+  && apk --no-cache add --virtual .build-dependencies curl \
+  && curl -fsSL ${GITHUB_REPO}/${APP_FILE} -o /app.jar \
+  && sh -c 'touch /app.jar' \
   && touch /user-service.log
 
 #########################################################################################
@@ -17,17 +22,13 @@ RUN sh -c 'touch /app.jar' \
 #########################################################################################
 
 ### install Filebeat
-ENV FILEBEAT_SRC_SHA1=19d0a93a42a758b8c9e71ca2691130fe5998fcb717019e29864f6ce0a21d4880c1654581220f0ce0f6118c914629df2baa91e95728f4e6a333666dffdf04df20 \
-    FILEBEAT_VERSION=6.2.4
+ENV FILEBEAT_SRC_SHA1=3fde7f5f5ea837140965a193bbb387c131c16d9c \
+    FILEBEAT_VERSION=1.2.3
 
-RUN set -ex \
-  && apk --no-cache add --virtual .build-dependencies \
-    curl \
-  \
-  && curl -fsSL http://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.2.4-linux-x86_64.tar.gz -o /tmp/filebeat.tar.gz \
+RUN curl -fsSL http://download.elastic.co/beats/filebeat/filebeat-${FILEBEAT_VERSION}-x86_64.tar.gz -o /tmp/filebeat.tar.gz \
   \
   && cd /tmp \
-  && echo " install" -c - \
+  && echo "${FILEBEAT_SRC_SHA1} *filebeat.tar.gz" | sha1sum -c - \
   && tar -xzf filebeat.tar.gz \
   \
   && cd filebeat-* \
@@ -43,6 +44,8 @@ ADD filebeat.yml /etc/filebeat/filebeat.yml
 ADD filebeat.template.json /etc/filebeat/filebeat.template.json
 
 # CA cert
+RUN mkdir -p /etc/pki/tls/certs
+ADD logstash-beats.crt /etc/pki/tls/certs/logstash-beats.crt
 
 ### start Filebeat
 ADD start.sh /usr/local/bin/start.sh
