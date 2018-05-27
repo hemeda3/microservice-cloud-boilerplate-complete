@@ -1,43 +1,21 @@
-output:
-  elasticsearch:
+output.elasticsearch:
     enabled: true
-    hosts:
-      - http://elasticsearch:9200
-    #timeout: 150
-    # A template is used to set the mapping in Elasticsearch
-    # By default template loading is disabled and no template is loaded.
-    # These settings can be adjusted to load your own template or overwrite existing ones
-    #template:
-
-      # Template name. By default the template name is filebeat.
-    #   name: "filebeat"
-
-      # Path to template file
-  #     path: "filebeat.template.json"
-
-      # Overwrite existing template
-  #     overwrite: false
-
+    hosts: ["http://elasticsearch:9200"]
 filebeat.prospectors:
-    -
-      enabled: true
-      type: log
-      paths:
+  - type: log
+    enabled: true
+    paths:
         - /logs/spring-boot-logging.log
-
-
-#============================== Kibana =====================================
-
-# Starting with Beats version 6.0.0, the dashboards are loaded via the Kibana API.
-# This requires a Kibana endpoint configuration.
+    multiline.pattern: ^\{
+    multiline.negate: true
+    multiline.match: after
 setup.kibana:
-
-  # Kibana Host
-  # Scheme and port can be left out and will be set to the default (http and 5601)
-  # In case you specify and additional path, the scheme is required: http://localhost:5601/path
-  # IPv6 addresses should always be defined as: https://[2001:db8::1]:5601
    host: "http://kibana:5601"
-
-#============================= Elastic Cloud ==================================
-
 setup.template.enabled: false
+processors:
+ - decode_json_fields:
+     fields: ["message"]
+     process_array: false
+     max_depth: 1
+     target: ""
+     overwrite_keys: true

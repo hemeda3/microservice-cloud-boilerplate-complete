@@ -6,14 +6,14 @@ until curl -s 'http://elasticsearch:9200' -o /dev/null; do
     sleep 30
 done
 while ! nc -z elasticsearch 9200; do sleep 5; done
-curl --header "Content-Type: application/json" -XPUT 'http://elasticsearch:9200/_template/filebeat?pretty' -d@/etc/filebeat/filebeat.template.json
-curl --header "Content-Type: application/json" -XPUT 'http://elasticsearch:9200/_template/filebeat?pretty' -d@/etc/filebeat/filebeat.template.json
-curl --header "Content-Type: application/json" -XPUT 'http://elasticsearch:9200/_template/filebeat?pretty' -d@/etc/filebeat/filebeat.template.json
-curl --header "Content-Type: application/json" -XPUT 'http://elasticsearch:9200/_template/filebeat?pretty' -d@/etc/filebeat/filebeat.template.json
-curl --header "Content-Type: application/json" -XPUT 'http://elasticsearch:9200/_template/filebeat?pretty' -d@/etc/filebeat/filebeat.template.json
 
 
+#curl -XPUT "localhost:9200/_template/filebeat-1" -H 'Content-Type: application/json' -d@/etc/filebeat/filebeat.template.json
+#curl -X PUT "localhost:9200/_template/filebeat-1" -H 'Content-Type: application/json' -d@/etc/filebeat/filebeat.template.json
 
+
+#curl -XPUT -H 'Content-Type: application/json' http://localhost:9200/_template/filebeat-1 -d@/etc/filebeat/filebeat.template.json
+#curl -XPUT -H 'Content-Type: application/json' http://localhost:9200/_template/filebeat-1 -d@/etc/filebeat/filebeat.template.json
 
 
 filebeat -c /etc/filebeat/filebeat.yml -e &

@@ -17,8 +17,6 @@ RUN sh -c 'touch /app.jar' \
 #########################################################################################
 
 ### install Filebeat
-ENV FILEBEAT_SRC_SHA1=19d0a93a42a758b8c9e71ca2691130fe5998fcb717019e29864f6ce0a21d4880c1654581220f0ce0f6118c914629df2baa91e95728f4e6a333666dffdf04df20 \
-    FILEBEAT_VERSION=6.2.4
 
 RUN set -ex \
   && apk --no-cache add --virtual .build-dependencies \
