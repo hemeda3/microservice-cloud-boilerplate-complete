@@ -8,13 +8,6 @@ done
 while ! nc -z elasticsearch 9200; do sleep 5; done
 
 
-#curl -XPUT "localhost:9200/_template/filebeat-1" -H 'Content-Type: application/json' -d@/etc/filebeat/filebeat.template.json
-#curl -X PUT "localhost:9200/_template/filebeat-1" -H 'Content-Type: application/json' -d@/etc/filebeat/filebeat.template.json
-
-
-#curl -XPUT -H 'Content-Type: application/json' http://localhost:9200/_template/filebeat-1 -d@/etc/filebeat/filebeat.template.json
-#curl -XPUT -H 'Content-Type: application/json' http://localhost:9200/_template/filebeat-1 -d@/etc/filebeat/filebeat.template.json
-
 
 filebeat -c /etc/filebeat/filebeat.yml -e &
 java -Djava.security.egd=file:/dev/./urandom -jar /app.jar

@@ -1,386 +1,695 @@
-2018-05-24 01:14:22.389  INFO 3180 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@dbd8e44: startup date [Thu May 24 01:14:22 EDT 2018]; root of context hierarchy
-2018-05-24 01:14:24.141  INFO 3180 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
-2018-05-24 01:14:24.156  INFO 3180 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
-2018-05-24 01:14:24.158  INFO 3180 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.14
-2018-05-24 01:14:24.326  INFO 3180 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2018-05-24 01:14:24.327  INFO 3180 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1941 ms
-2018-05-24 01:14:24.520  INFO 3180 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
-2018-05-24 01:14:24.522  INFO 3180 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'webServlet' to [/console/*]
-2018-05-24 01:14:24.527  INFO 3180 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
-2018-05-24 01:14:24.527  INFO 3180 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-2018-05-24 01:14:24.527  INFO 3180 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
-2018-05-24 01:14:24.528  INFO 3180 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
-2018-05-24 01:14:24.816  INFO 3180 --- [main] o.f.core.internal.util.VersionPrinter    : Flyway Community Edition 5.0.7 by Boxfuse
-2018-05-24 01:14:25.050  INFO 3180 --- [main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:testdb (H2 1.4)
-2018-05-24 01:14:25.135  INFO 3180 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.023s)
-2018-05-24 01:14:25.144  INFO 3180 --- [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table: "PUBLIC"."flyway_schema_history"
-2018-05-24 01:14:25.168  INFO 3180 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
-2018-05-24 01:14:25.170  INFO 3180 --- [main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1 - create user table
-2018-05-24 01:14:25.187  INFO 3180 --- [main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 2 - add version to user
-2018-05-24 01:14:25.206  INFO 3180 --- [main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 3 - insert data to user
-2018-05-24 01:14:25.212  INFO 3180 --- [main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 4 - insert test data
-2018-05-24 01:14:25.217  INFO 3180 --- [main] o.f.core.internal.command.DbMigrate      : Successfully applied 4 migrations to schema "PUBLIC" (execution time 00:00.073s)
-2018-05-24 01:14:25.352  INFO 3180 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
-2018-05-24 01:14:25.369  INFO 3180 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2018-05-24 01:14:25.452  INFO 3180 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
-2018-05-24 01:14:25.454  INFO 3180 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2018-05-24 01:14:25.456  INFO 3180 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
-2018-05-24 01:14:25.520  INFO 3180 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-2018-05-24 01:14:25.675  INFO 3180 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2018-05-24 01:14:26.193  INFO 3180 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2018-05-24 01:14:26.369  INFO 3180 --- [main] i.StatisticalLoggingSessionEventListener : Session Metrics {
-    0 nanoseconds spent acquiring 0 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    0 nanoseconds spent preparing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+[
+{
+  "timeMillis" : 1527473202811,
+  "thread" : "main",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.UserApplication",
+  "message" : "Starting UserApplication on TORWL400091 with PID 20312 (C:\\Users\\ahmohammed\\Desktop\\homework\\microservice-cloud-boilerplate-complete\\user-webservice\\build\\classes\\main started by ahmohammed in C:\\Users\\ahmohammed\\Desktop\\homework\\microservice-cloud-boilerplate-complete\\user-webservice)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 1,
+  "threadPriority" : 5
 }
-2018-05-24 01:14:26.372  INFO 3180 --- [main] i.StatisticalLoggingSessionEventListener : Session Metrics {
-    0 nanoseconds spent acquiring 0 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    0 nanoseconds spent preparing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+, {
+  "timeMillis" : 1527473202927,
+  "thread" : "main",
+  "level" : "DEBUG",
+  "loggerName" : "com.ahmed.UserApplication",
+  "message" : "Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 1,
+  "threadPriority" : 5
 }
-2018-05-24 01:14:26.374  INFO 3180 --- [main] i.StatisticalLoggingSessionEventListener : Session Metrics {
-    0 nanoseconds spent acquiring 0 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    0 nanoseconds spent preparing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+, {
+  "timeMillis" : 1527473202927,
+  "thread" : "main",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.UserApplication",
+  "message" : "No active profile set, falling back to default profiles: default",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 1,
+  "threadPriority" : 5
 }
-2018-05-24 01:14:26.399  INFO 3180 --- [main] i.StatisticalLoggingSessionEventListener : Session Metrics {
-    0 nanoseconds spent acquiring 0 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    0 nanoseconds spent preparing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+, {
+  "timeMillis" : 1527473207903,
+  "thread" : "main",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.UserApplication",
+  "message" : "Started UserApplication in 5.952 seconds (JVM running for 6.991)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 1,
+  "threadPriority" : 5
 }
-2018-05-24 01:14:26.429  INFO 3180 --- [main] i.StatisticalLoggingSessionEventListener : Session Metrics {
-    0 nanoseconds spent acquiring 0 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    0 nanoseconds spent preparing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+{
+  "timeMillis" : 1527475691474,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Starting UserBusinessInTest on TORWL400091 with PID 9120 (started by ahmohammed in C:\\Users\\ahmohammed\\Desktop\\homework\\microservice-cloud-boilerplate-complete\\user-webservice)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
 }
-2018-05-24 01:14:26.868  INFO 3180 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@dbd8e44: startup date [Thu May 24 01:14:22 EDT 2018]; root of context hierarchy
-2018-05-24 01:14:26.948  INFO 3180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto org.springframework.http.ResponseEntity<java.util.List<com.anilallewar.microservices.user.dto.UserDTO>> com.anilallewar.microservices.user.api.UserController.findUsers(javax.servlet.http.HttpServletRequest)
-2018-05-24 01:14:26.949  INFO 3180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[POST]}" onto org.springframework.http.ResponseEntity<com.anilallewar.microservices.user.dto.UserDTO> com.anilallewar.microservices.user.api.UserController.saveUser(com.anilallewar.microservices.user.dto.UserDTO)
-2018-05-24 01:14:26.952  INFO 3180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2018-05-24 01:14:26.952  INFO 3180 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2018-05-24 01:14:26.982  INFO 3180 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-05-24 01:14:26.983  INFO 3180 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-05-24 01:14:27.002  INFO 3180 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in exceptionHandlingController
-2018-05-24 01:14:27.027  INFO 3180 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-05-24 01:14:27.307  INFO 3180 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
-2018-05-24 01:14:27.345 ERROR 3180 --- [main] o.a.coyote.http11.Http11NioProtocol      : Failed to start end point associated with ProtocolHandler ["http-nio-8080"]
+, {
+  "timeMillis" : 1527475691560,
+  "thread" : "Test worker",
+  "level" : "DEBUG",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527475691560,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "No active profile set, falling back to default profiles: default",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527475695521,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Started UserBusinessInTest in 4.368 seconds (JVM running for 6.33)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527475695786,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Starting UserControllerInTest on TORWL400091 with PID 9120 (started by ahmohammed in C:\\Users\\ahmohammed\\Desktop\\homework\\microservice-cloud-boilerplate-complete\\user-webservice)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527475695786,
+  "thread" : "Test worker",
+  "level" : "DEBUG",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527475695786,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "No active profile set, falling back to default profiles: default",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527475696418,
+  "thread" : "Test worker",
+  "level" : "WARN",
+  "loggerName" : "org.hibernate.jpa.internal.EntityManagerFactoryRegistry",
+  "message" : "HHH000436: Entity manager factory name (default) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.hibernate.internal.CoreMessageLogger_$logger",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527475696881,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Started UserControllerInTest in 1.148 seconds (JVM running for 7.691)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527475696948,
+  "thread" : "Test worker",
+  "level" : "ERROR",
+  "loggerName" : "com.ahmed.exceptions.ExceptionHandlingController",
+  "message" : "ExceptionResponse(exception=null, errorCode=GENRIC-INTERNAL-ERROR-01, errorMessage=Generic error happened )Required request body is missing: org.springframework.http.ResponseEntity<com.ahmed.dto.UserDTO> com.ahmed.api.UserController.saveUser(com.ahmed.dto.UserDTO)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
 
-java.net.BindException: Address already in use: bind
-	at sun.nio.ch.Net.bind0(Native Method)
-	at sun.nio.ch.Net.bind(Unknown Source)
-	at sun.nio.ch.Net.bind(Unknown Source)
-	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source)
-	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source)
-	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
-	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:978)
-	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:628)
-	at org.apache.catalina.connector.Connector.startInternal(Connector.java:993)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
-	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
-	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:247)
-	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:190)
-	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
-	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
-	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151)
-	at com.anilallewar.microservices.user.UserApplication.main(UserApplication.java:41)
+]
+{
+  "timeMillis" : 1527475996834,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Starting UserBusinessInTest on TORWL400091 with PID 18320 (started by ahmohammed in C:\\Users\\ahmohammed\\Desktop\\homework\\microservice-cloud-boilerplate-complete\\user-webservice)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527475996918,
+  "thread" : "Test worker",
+  "level" : "DEBUG",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527475996918,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "No active profile set, falling back to default profiles: default",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476000922,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Started UserBusinessInTest in 4.432 seconds (JVM running for 6.323)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476001159,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Starting UserControllerInTest on TORWL400091 with PID 18320 (started by ahmohammed in C:\\Users\\ahmohammed\\Desktop\\homework\\microservice-cloud-boilerplate-complete\\user-webservice)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476001160,
+  "thread" : "Test worker",
+  "level" : "DEBUG",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476001160,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "No active profile set, falling back to default profiles: default",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476001909,
+  "thread" : "Test worker",
+  "level" : "WARN",
+  "loggerName" : "org.hibernate.jpa.internal.EntityManagerFactoryRegistry",
+  "message" : "HHH000436: Entity manager factory name (default) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.hibernate.internal.CoreMessageLogger_$logger",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476002361,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Started UserControllerInTest in 1.254 seconds (JVM running for 7.761)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476002422,
+  "thread" : "Test worker",
+  "level" : "ERROR",
+  "loggerName" : "com.ahmed.exceptions.ExceptionHandlingController",
+  "message" : "ExceptionResponse(exception=null, errorCode=INPUT-EMPTY-1001, errorMessage=Required request body is missing: org.springframework.http.ResponseEntity<com.ahmed.dto.UserDTO> com.ahmed.api.UserController.saveUser(com.ahmed.dto.UserDTO))",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
 
-2018-05-24 01:14:27.346 ERROR 3180 --- [main] o.apache.catalina.core.StandardService   : Failed to start connector [Connector[HTTP/1.1-8080]]
+]
+{
+  "timeMillis" : 1527476077893,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Starting UserBusinessInTest on TORWL400091 with PID 23520 (started by ahmohammed in C:\\Users\\ahmohammed\\Desktop\\homework\\microservice-cloud-boilerplate-complete\\user-webservice)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476077971,
+  "thread" : "Test worker",
+  "level" : "DEBUG",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476077972,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "No active profile set, falling back to default profiles: default",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476081927,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Started UserBusinessInTest in 4.365 seconds (JVM running for 6.143)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476082215,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Starting UserControllerInTest on TORWL400091 with PID 23520 (started by ahmohammed in C:\\Users\\ahmohammed\\Desktop\\homework\\microservice-cloud-boilerplate-complete\\user-webservice)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476082215,
+  "thread" : "Test worker",
+  "level" : "DEBUG",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476082216,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "No active profile set, falling back to default profiles: default",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476082854,
+  "thread" : "Test worker",
+  "level" : "WARN",
+  "loggerName" : "org.hibernate.jpa.internal.EntityManagerFactoryRegistry",
+  "message" : "HHH000436: Entity manager factory name (default) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.hibernate.internal.CoreMessageLogger_$logger",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476083309,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Started UserControllerInTest in 1.146 seconds (JVM running for 7.525)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476083375,
+  "thread" : "Test worker",
+  "level" : "ERROR",
+  "loggerName" : "com.ahmed.exceptions.ExceptionHandlingController",
+  "message" : "ExceptionResponse(exception=null, errorCode=INPUT-EMPTY-1001, errorMessage=Required request body is missing: org.springframework.http.ResponseEntity<com.ahmed.dto.UserDTO> com.ahmed.api.UserController.saveUser(com.ahmed.dto.UserDTO))",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
 
-org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8080]]
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:167)
-	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
-	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.addPreviouslyRemovedConnectors(TomcatEmbeddedServletContainer.java:247)
-	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.start(TomcatEmbeddedServletContainer.java:190)
-	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.startEmbeddedServletContainer(EmbeddedWebApplicationContext.java:297)
-	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.finishRefresh(EmbeddedWebApplicationContext.java:145)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
-	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1162)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1151)
-	at com.anilallewar.microservices.user.UserApplication.main(UserApplication.java:41)
-Caused by: org.apache.catalina.LifecycleException: service.getName(): "Tomcat";  Protocol handler start failed
-	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1000)
-	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
-	... 13 common frames omitted
-Caused by: java.net.BindException: Address already in use: bind
-	at sun.nio.ch.Net.bind0(Native Method)
-	at sun.nio.ch.Net.bind(Unknown Source)
-	at sun.nio.ch.Net.bind(Unknown Source)
-	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source)
-	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source)
-	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
-	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:978)
-	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:628)
-	at org.apache.catalina.connector.Connector.startInternal(Connector.java:993)
-	... 14 common frames omitted
+]
+{
+  "timeMillis" : 1527476373525,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Starting UserBusinessInTest on TORWL400091 with PID 4636 (started by ahmohammed in C:\\Users\\ahmohammed\\Desktop\\homework\\microservice-cloud-boilerplate-complete\\user-webservice)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476373616,
+  "thread" : "Test worker",
+  "level" : "DEBUG",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476373617,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "No active profile set, falling back to default profiles: default",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476377506,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Started UserBusinessInTest in 4.293 seconds (JVM running for 6.248)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476377742,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Starting UserControllerInTest on TORWL400091 with PID 4636 (started by ahmohammed in C:\\Users\\ahmohammed\\Desktop\\homework\\microservice-cloud-boilerplate-complete\\user-webservice)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476377742,
+  "thread" : "Test worker",
+  "level" : "DEBUG",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476377742,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "No active profile set, falling back to default profiles: default",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476378444,
+  "thread" : "Test worker",
+  "level" : "WARN",
+  "loggerName" : "org.hibernate.jpa.internal.EntityManagerFactoryRegistry",
+  "message" : "HHH000436: Entity manager factory name (default) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.hibernate.internal.CoreMessageLogger_$logger",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476378858,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Started UserControllerInTest in 1.169 seconds (JVM running for 7.6)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527476378921,
+  "thread" : "Test worker",
+  "level" : "ERROR",
+  "loggerName" : "com.ahmed.exceptions.ExceptionHandlingController",
+  "message" : "ExceptionResponse(exception=null, errorCode=INPUT-EMPTY-1001, errorMessage=Required request body is missing: org.springframework.http.ResponseEntity<com.ahmed.dto.UserDTO> com.ahmed.api.UserController.saveUser(com.ahmed.dto.UserDTO))",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
 
-2018-05-24 01:14:27.357  INFO 3180 --- [main] o.apache.catalina.core.StandardService   : Stopping service Tomcat
-2018-05-24 01:14:27.375  INFO 3180 --- [main] utoConfigurationReportLoggingInitializer : 
+]
+{
+  "timeMillis" : 1527479292869,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Starting UserBusinessInTest on TORWL400091 with PID 16428 (started by ahmohammed in C:\\Users\\ahmohammed\\Desktop\\homework\\microservice-cloud-boilerplate-complete\\user-webservice)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527479292966,
+  "thread" : "Test worker",
+  "level" : "DEBUG",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527479292967,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "No active profile set, falling back to default profiles: default",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527479296945,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Started UserBusinessInTest in 4.42 seconds (JVM running for 6.745)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527479297307,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Starting UserControllerInTest on TORWL400091 with PID 16428 (started by ahmohammed in C:\\Users\\ahmohammed\\Desktop\\homework\\microservice-cloud-boilerplate-complete\\user-webservice)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527479297307,
+  "thread" : "Test worker",
+  "level" : "DEBUG",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527479297307,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "No active profile set, falling back to default profiles: default",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527479298359,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Started UserControllerInTest in 1.104 seconds (JVM running for 8.158)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527479298419,
+  "thread" : "Test worker",
+  "level" : "ERROR",
+  "loggerName" : "com.ahmed.exceptions.ExceptionHandlingController",
+  "message" : "ExceptionResponse(exception=null, errorCode=INPUT-EMPTY-1001, errorMessage=Required request body is missing: org.springframework.http.ResponseEntity<com.ahmed.dto.UserDTO> com.ahmed.api.UserController.saveUser(com.ahmed.dto.UserDTO))",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
 
-Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
-2018-05-24 01:14:27.381 ERROR 3180 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+]
+{
+  "timeMillis" : 1527479524136,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Starting UserBusinessInTest on TORWL400091 with PID 14888 (started by ahmohammed in C:\\Users\\ahmohammed\\Desktop\\homework\\microservice-cloud-boilerplate-complete\\user-webservice)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527479524221,
+  "thread" : "Test worker",
+  "level" : "DEBUG",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527479524221,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "No active profile set, falling back to default profiles: default",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527479528292,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Started UserBusinessInTest in 4.478 seconds (JVM running for 6.695)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527479528590,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Starting UserControllerInTest on TORWL400091 with PID 14888 (started by ahmohammed in C:\\Users\\ahmohammed\\Desktop\\homework\\microservice-cloud-boilerplate-complete\\user-webservice)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527479528590,
+  "thread" : "Test worker",
+  "level" : "DEBUG",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527479528591,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "No active profile set, falling back to default profiles: default",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527479529929,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Started UserControllerInTest in 1.393 seconds (JVM running for 8.332)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527479530000,
+  "thread" : "Test worker",
+  "level" : "ERROR",
+  "loggerName" : "com.ahmed.exceptions.ExceptionHandlingController",
+  "message" : "ExceptionResponse(exception=null, errorCode=INPUT-EMPTY-1001, errorMessage=Required request body is missing: org.springframework.http.ResponseEntity<com.ahmed.dto.UserDTO> com.ahmed.api.UserController.saveUser(com.ahmed.dto.UserDTO))",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 9,
+  "threadPriority" : 5
+}
 
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.
-
-Action:
-
-Verify the connector's configuration, identify and stop any process that's listening on port 8080, or configure this application to listen on another port.
-
-2018-05-24 01:14:27.382  INFO 3180 --- [main] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@dbd8e44: startup date [Thu May 24 01:14:22 EDT 2018]; root of context hierarchy
-2018-05-24 01:14:27.384  INFO 3180 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
-2018-05-24 01:14:27.385  INFO 3180 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2018-05-24 01:15:46.790  INFO 10912 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@dbd8e44: startup date [Thu May 24 01:15:46 EDT 2018]; root of context hierarchy
-2018-05-24 01:15:48.554  INFO 10912 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
-2018-05-24 01:15:48.568  INFO 10912 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
-2018-05-24 01:15:48.570  INFO 10912 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.14
-2018-05-24 01:15:48.721  INFO 10912 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2018-05-24 01:15:48.721  INFO 10912 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1937 ms
-2018-05-24 01:15:48.926  INFO 10912 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
-2018-05-24 01:15:48.928  INFO 10912 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'webServlet' to [/console/*]
-2018-05-24 01:15:48.933  INFO 10912 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
-2018-05-24 01:15:48.933  INFO 10912 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-2018-05-24 01:15:48.934  INFO 10912 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
-2018-05-24 01:15:48.934  INFO 10912 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
-2018-05-24 01:15:49.231  INFO 10912 --- [main] o.f.core.internal.util.VersionPrinter    : Flyway Community Edition 5.0.7 by Boxfuse
-2018-05-24 01:15:49.479  INFO 10912 --- [main] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:testdb (H2 1.4)
-2018-05-24 01:15:49.555  INFO 10912 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 4 migrations (execution time 00:00.015s)
-2018-05-24 01:15:49.568  INFO 10912 --- [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table: "PUBLIC"."flyway_schema_history"
-2018-05-24 01:15:49.593  INFO 10912 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
-2018-05-24 01:15:49.596  INFO 10912 --- [main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1 - create user table
-2018-05-24 01:15:49.613  INFO 10912 --- [main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 2 - add version to user
-2018-05-24 01:15:49.633  INFO 10912 --- [main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 3 - insert data to user
-2018-05-24 01:15:49.640  INFO 10912 --- [main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 4 - insert test data
-2018-05-24 01:15:49.645  INFO 10912 --- [main] o.f.core.internal.command.DbMigrate      : Successfully applied 4 migrations to schema "PUBLIC" (execution time 00:00.078s)
-2018-05-24 01:15:49.781  INFO 10912 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
-2018-05-24 01:15:49.800  INFO 10912 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2018-05-24 01:15:49.888  INFO 10912 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
-2018-05-24 01:15:49.889  INFO 10912 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2018-05-24 01:15:49.891  INFO 10912 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
-2018-05-24 01:15:49.951  INFO 10912 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-2018-05-24 01:15:50.091  INFO 10912 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2018-05-24 01:15:50.615  INFO 10912 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2018-05-24 01:15:50.801  INFO 10912 --- [main] i.StatisticalLoggingSessionEventListener : Session Metrics {
-    0 nanoseconds spent acquiring 0 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    0 nanoseconds spent preparing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2018-05-24 01:15:50.804  INFO 10912 --- [main] i.StatisticalLoggingSessionEventListener : Session Metrics {
-    0 nanoseconds spent acquiring 0 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    0 nanoseconds spent preparing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2018-05-24 01:15:50.806  INFO 10912 --- [main] i.StatisticalLoggingSessionEventListener : Session Metrics {
-    0 nanoseconds spent acquiring 0 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    0 nanoseconds spent preparing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2018-05-24 01:15:50.828  INFO 10912 --- [main] i.StatisticalLoggingSessionEventListener : Session Metrics {
-    0 nanoseconds spent acquiring 0 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    0 nanoseconds spent preparing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2018-05-24 01:15:50.856  INFO 10912 --- [main] i.StatisticalLoggingSessionEventListener : Session Metrics {
-    0 nanoseconds spent acquiring 0 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    0 nanoseconds spent preparing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2018-05-24 01:15:51.268  INFO 10912 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@dbd8e44: startup date [Thu May 24 01:15:46 EDT 2018]; root of context hierarchy
-2018-05-24 01:15:51.361  INFO 10912 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto org.springframework.http.ResponseEntity<java.util.List<com.anilallewar.microservices.user.dto.UserDTO>> com.anilallewar.microservices.user.api.UserController.findUsers(javax.servlet.http.HttpServletRequest)
-2018-05-24 01:15:51.363  INFO 10912 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[POST]}" onto org.springframework.http.ResponseEntity<com.anilallewar.microservices.user.dto.UserDTO> com.anilallewar.microservices.user.api.UserController.saveUser(com.anilallewar.microservices.user.dto.UserDTO)
-2018-05-24 01:15:51.365  INFO 10912 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2018-05-24 01:15:51.366  INFO 10912 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2018-05-24 01:15:51.398  INFO 10912 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-05-24 01:15:51.399  INFO 10912 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-05-24 01:15:51.420  INFO 10912 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in exceptionHandlingController
-2018-05-24 01:15:51.451  INFO 10912 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2018-05-24 01:15:51.731  INFO 10912 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
-2018-05-24 01:15:51.798  INFO 10912 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
-2018-05-24 01:15:57.083  INFO 10912 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2018-05-24 01:15:57.084  INFO 10912 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
-2018-05-24 01:15:57.121  INFO 10912 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 36 ms
-2018-05-24 01:16:00.389  INFO 10912 --- [http-nio-8080-exec-3] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2018-05-24 01:16:00.624  INFO 10912 --- [http-nio-8080-exec-3] i.StatisticalLoggingSessionEventListener : Session Metrics {
-    722051 nanoseconds spent acquiring 1 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    393481 nanoseconds spent preparing 1 JDBC statements;
-    422290 nanoseconds spent executing 1 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    22609 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2018-05-24 01:16:01.621  INFO 10912 --- [http-nio-8080-exec-4] i.StatisticalLoggingSessionEventListener : Session Metrics {
-    41938 nanoseconds spent acquiring 1 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    29539 nanoseconds spent preparing 1 JDBC statements;
-    57253 nanoseconds spent executing 1 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    2188 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2018-05-24 01:16:01.762  INFO 10912 --- [http-nio-8080-exec-6] i.StatisticalLoggingSessionEventListener : Session Metrics {
-    44490 nanoseconds spent acquiring 1 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    48866 nanoseconds spent preparing 1 JDBC statements;
-    71841 nanoseconds spent executing 1 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    3282 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2018-05-24 01:16:01.891  INFO 10912 --- [http-nio-8080-exec-8] i.StatisticalLoggingSessionEventListener : Session Metrics {
-    38291 nanoseconds spent acquiring 1 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    51054 nanoseconds spent preparing 1 JDBC statements;
-    36832 nanoseconds spent executing 1 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    2188 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2018-05-24 01:16:02.058  INFO 10912 --- [http-nio-8080-exec-10] i.StatisticalLoggingSessionEventListener : Session Metrics {
-    45220 nanoseconds spent acquiring 1 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    64912 nanoseconds spent preparing 1 JDBC statements;
-    41938 nanoseconds spent executing 1 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    3282 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2018-05-24 01:16:02.185  INFO 10912 --- [http-nio-8080-exec-2] i.StatisticalLoggingSessionEventListener : Session Metrics {
-    64548 nanoseconds spent acquiring 1 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    67829 nanoseconds spent preparing 1 JDBC statements;
-    46678 nanoseconds spent executing 1 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    4011 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2018-05-24 01:16:02.291  INFO 10912 --- [http-nio-8080-exec-4] i.StatisticalLoggingSessionEventListener : Session Metrics {
-    49595 nanoseconds spent acquiring 1 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    43396 nanoseconds spent preparing 1 JDBC statements;
-    51783 nanoseconds spent executing 1 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    3647 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2018-05-24 01:16:02.540  INFO 10912 --- [http-nio-8080-exec-6] i.StatisticalLoggingSessionEventListener : Session Metrics {
-    48501 nanoseconds spent acquiring 1 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    38655 nanoseconds spent preparing 1 JDBC statements;
-    42302 nanoseconds spent executing 1 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    2917 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
+]

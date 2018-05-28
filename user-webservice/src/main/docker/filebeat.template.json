@@ -1,23 +1,47 @@
 {
-  "index_patterns" : ["filebeat-222"],
-  "order" : 0,
-  "settings" : {
-    "number_of_shards" : 1
+  "index_patterns": [
+    "filebeat-222"
+  ],
+  "order": 0,
+  "settings": {
+    "number_of_shards": 1
   },
   "mappings": {
     "mylogs": {
       "properties": {
-        "timeMillis": { "type": "text" },
-        "level": { "type": "text" },
-        "loggerName": { "type": "text" },
-        "message": { "type": "text" },
-        "loggerFqcn": { "type": "text" },
-        "endOfBatch": { "type": "text" },
-        "threadId": { "type": "text" },
-        "threadPriority": { "type": "text" },
-        "name": { "type": "text" },
-        "thread": { "type": "text" },
-        "logdate": { "type": "keyword" }
+        "timeMillis": {
+          "type": "text"
+        },
+        "level": {
+          "type": "text"
+        },
+        "loggerName": {
+          "type": "text"
+        },
+        "message": {
+          "type": "text"
+        },
+        "loggerFqcn": {
+          "type": "text"
+        },
+        "endOfBatch": {
+          "type": "text"
+        },
+        "threadId": {
+          "type": "text"
+        },
+        "threadPriority": {
+          "type": "text"
+        },
+        "name": {
+          "type": "text"
+        },
+        "thread": {
+          "type": "text"
+        },
+        "logdate": {
+          "type": "keyword"
+        }
       }
     }
   }

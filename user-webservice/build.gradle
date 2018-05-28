@@ -1,17 +1,21 @@
 /*
 * Build file for user-webservice
 */
+
+
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'application'
 apply plugin: 'docker'
-apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'findbugs'
+apply plugin: "scala"
 
 buildscript {
 	project.ext {
          springBootVersion = '1.5.3.RELEASE'
-         jarName = 'basic-user-webservice-v1'
-         versionName = '0.0.1'
+         jarName = 'basic-user-webservice'
+         versionName = '0.1.1'
          gradleDockerVersion = '1.2'
          lombokVersion: '1.16.16'
 
@@ -20,7 +24,7 @@ buildscript {
         jcenter()
         mavenCentral()
     }
-    
+
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${project.springBootVersion}"
         classpath "se.transmode.gradle:gradle-docker:${project.gradleDockerVersion}"
@@ -35,7 +39,7 @@ task createWrapper(type: Wrapper) {
 
 // Used by the Docker gradle plugin, group refers to the account under which the docker image is created
 group = 'ahmed'
-mainClassName = 'com.anilallewar.microservices.user.UserApplication'
+mainClassName = 'com.ahmed.UserApplication'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
@@ -51,50 +55,38 @@ dependencyManagement {
 }
 
 dependencies {
-    // Basic Spring boot with config client
-    compile('org.springframework.cloud:spring-cloud-starter-config')
+
     compile("org.springframework.boot:spring-boot-starter-web")    {
-        exclude module : 'spring-boot-starter-logging'
-    }
-
-    compile("org.springframework.boot:spring-boot-starter-actuator")
-    compile("org.springframework.boot:spring-boot-starter-data-jpa") {
        exclude module : 'spring-boot-starter-logging'
+    }
+
+     compile("org.springframework.boot:spring-boot-starter-data-jpa") {
+      exclude module : 'spring-boot-starter-logging'
 
     }
+    compile('com.lmax:disruptor:3.3.6')
+
     compile('org.springframework.boot:spring-boot-starter-log4j2')
 
     compile("com.h2database:h2")
 
-    // zipkin
-    compile 'org.springframework.cloud:spring-cloud-sleuth-zipkin'
+    compile ('com.github.rozidan:modelmapper-spring-boot-starter:1.0.0')
+            {
+                exclude module : 'spring-boot-starter-logging'
 
-    // sleuth
-    compile 'org.springframework.cloud:spring-cloud-starter-sleuth'
-    // kafka appender
-   // compile 'org.apache.kafka:kafka-log4j-appender:0.9.0.0'
-    // log back
-    compile 'net.logstash.logback:logstash-logback-encoder:4.9'
-    compile'ch.qos.logback:logback-classic:1.2.3'
-    compile'ch.qos.logback:logback-core:1.2.3'
-    // model mapper DTO to entity and else
-    compile 'com.github.rozidan:modelmapper-spring-boot-starter:1.0.0'
-
+}
     // flyway for database version conrol
     compile "org.flywaydb:flyway-core:5.0.7"
 
 
-    // lombok
-    compileOnly "org.projectlombok:lombok:1.16.16"
+     compileOnly "org.projectlombok:lombok:1.16.16"
+     testCompile("junit:junit")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("io.gatling.highcharts:gatling-charts-highcharts:2.2.3")
 
-    
-    // Eureka client
-    compile('org.springframework.cloud:spring-cloud-starter-eureka')
-	
-	// Zipkin tracing
-	compile('org.springframework.cloud:spring-cloud-starter-zipkin')
 
 }
+
 
 jar {
     baseName = "${project.jarName}"
@@ -107,10 +99,15 @@ jar {
 * by the docker gradle plugin. We then build the docker image by invoking the appropriate
 * Dockerfile.  
 */
+
+docker {
+    maintainer = 'Ahmed Mohammed <hemeda2@gmail.com>'
+    baseImage = 'frolvlad/alpine-oraclejdk8:slim'
+}
 task buildDocker(type: Docker, dependsOn: build) {
     push = false
     applicationName = jar.baseName
-    tagVersion = jar.version
+   // tagVersion = "latest"
     dockerfile = file('src/main/docker/Dockerfile')
     doFirst {
         // Copy the built fat jar to the Docker plugin staging directory
@@ -120,11 +117,25 @@ task buildDocker(type: Docker, dependsOn: build) {
         }
         // Copy the run.sh file to the Docker plugin staging directory
         copy {
-            from "${project.buildDir}/resources/main/filebeat.yml"
+            from 'src/main/docker/filebeat.yml'
+            from 'src/main/docker/start.sh'
             into stageDir
         }
     }
 
+}
+
+task loadTest(type: JavaExec) {
+    dependsOn testClasses
+    description = "load test with Gatling"
+    group = "Load Test"
+    classpath = sourceSets.test.runtimeClasspath
+    main = "io.gatling.app.Gatling"
+    args = [
+            "--simulation", "com.statflo.project.gatling.MainSimulation",
+            "--results-folder", "${buildDir}/gatling-results",
+            "--bodies-folder", sourceSets.test.resources.srcDirs.toList().first().toString() + "/gatling/bodies",
+    ]
 }
 
 run {

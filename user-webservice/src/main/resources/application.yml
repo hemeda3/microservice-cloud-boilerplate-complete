@@ -21,5 +21,6 @@ spring:
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: true
 
- #   logging:
-#      file: /application-debug.log
+    logging:
+      file: /application-debug.log
+#  Discovery client
