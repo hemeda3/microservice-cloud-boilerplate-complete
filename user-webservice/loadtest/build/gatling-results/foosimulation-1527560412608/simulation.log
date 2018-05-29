@@ -1,0 +1,4 @@
+gatling.simulations.FooSimulation	foosimulation	RUN	1527560412608	 	2.0
+foo load test	8724661642690184194-0	USER	START	1527560412670	0
+foo load test	8724661642690184194-0	REQUEST		Mark	1527560412715	1527560412715	1527560412715	1527560413722	KO	java.net.ConnectException: Connection refused: no further information: localhost/127.0.0.1:80
+foo load test	8724661642690184194-0	USER	END	1527560412670	1527560413808

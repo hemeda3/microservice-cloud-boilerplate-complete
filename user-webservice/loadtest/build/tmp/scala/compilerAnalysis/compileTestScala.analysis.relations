@@ -1,0 +1,11 @@
+products:
+   C:\Users\ahmohammed\Desktop\homework\microservice-cloud-boilerplate-complete\user-webservice\loadtest\src\test\scala\gatling\simulations\FooSimulation.scala -> C:\Users\ahmohammed\Desktop\homework\microservice-cloud-boilerplate-complete\user-webservice\loadtest\build\classes\test\gatling\simulations\FooSimulation.class
+binary dependencies:
+   C:\Users\ahmohammed\Desktop\homework\microservice-cloud-boilerplate-complete\user-webservice\loadtest\src\test\scala\gatling\simulations\FooSimulation.scala -> C:\Program Files\Java\jdk1.8.0_161\jre\lib\rt.jar
+   C:\Users\ahmohammed\Desktop\homework\microservice-cloud-boilerplate-complete\user-webservice\loadtest\src\test\scala\gatling\simulations\FooSimulation.scala -> C:\Users\ahmohammed\.gradle\caches\modules-2\files-2.1\io.gatling\gatling-core\2.1.6\bf8cf3a4466abc5445370b1714853a82dbaa4ed4\gatling-core-2.1.6.jar
+   C:\Users\ahmohammed\Desktop\homework\microservice-cloud-boilerplate-complete\user-webservice\loadtest\src\test\scala\gatling\simulations\FooSimulation.scala -> C:\Users\ahmohammed\.gradle\caches\modules-2\files-2.1\io.gatling\gatling-http\2.1.6\39a30ba1f72a17d404b2f173eb5ce7b40e3ca10f\gatling-http-2.1.6.jar
+   C:\Users\ahmohammed\Desktop\homework\microservice-cloud-boilerplate-complete\user-webservice\loadtest\src\test\scala\gatling\simulations\FooSimulation.scala -> C:\Users\ahmohammed\.gradle\caches\modules-2\files-2.1\org.scala-lang\scala-library\2.11.8\ddd5a8bced249bedd86fb4578a39b9fb71480573\scala-library-2.11.8.jar
+source dependencies:
+external dependencies:
+class names:
+   C:\Users\ahmohammed\Desktop\homework\microservice-cloud-boilerplate-complete\user-webservice\loadtest\src\test\scala\gatling\simulations\FooSimulation.scala -> gatling.simulations.FooSimulation

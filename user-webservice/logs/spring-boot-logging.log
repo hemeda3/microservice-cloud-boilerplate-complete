@@ -693,3 +693,130 @@
 }
 
 ]
+
+]
+
+]
+
+]
+
+]
+
+]
+
+]
+
+]
+
+]
+
+]
+
+]
+
+]
+
+]
+
+]
+{
+  "timeMillis" : 1527555686843,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Starting UserBusinessInTest on TORWL400091 with PID 5844 (started by ahmohammed in C:\\Users\\ahmohammed\\Desktop\\homework\\microservice-cloud-boilerplate-complete\\user-webservice)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 12,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527555686940,
+  "thread" : "Test worker",
+  "level" : "DEBUG",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 12,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527555686940,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "No active profile set, falling back to default profiles: default",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 12,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527555691886,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserBusinessInTest",
+  "message" : "Started UserBusinessInTest in 5.429 seconds (JVM running for 7.941)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 12,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527555692214,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Starting UserControllerInTest on TORWL400091 with PID 5844 (started by ahmohammed in C:\\Users\\ahmohammed\\Desktop\\homework\\microservice-cloud-boilerplate-complete\\user-webservice)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 12,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527555692214,
+  "thread" : "Test worker",
+  "level" : "DEBUG",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 12,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527555692215,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "No active profile set, falling back to default profiles: default",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 12,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527555693711,
+  "thread" : "Test worker",
+  "level" : "INFO",
+  "loggerName" : "com.ahmed.microservices.user.unit.UserControllerInTest",
+  "message" : "Started UserControllerInTest in 1.559 seconds (JVM running for 9.767)",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.commons.logging.impl.SLF4JLocationAwareLog",
+  "threadId" : 12,
+  "threadPriority" : 5
+}
+, {
+  "timeMillis" : 1527555693799,
+  "thread" : "Test worker",
+  "level" : "ERROR",
+  "loggerName" : "com.ahmed.exceptions.ExceptionHandlingController",
+  "message" : "ExceptionResponse(exception=null, errorCode=INPUT-EMPTY-1001, errorMessage=Required request body is missing: org.springframework.http.ResponseEntity<com.ahmed.dto.UserDTO> com.ahmed.api.UserController.saveUser(com.ahmed.dto.UserDTO))",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 12,
+  "threadPriority" : 5
+}
+
+]

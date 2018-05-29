@@ -9,7 +9,6 @@ apply plugin: 'application'
 apply plugin: 'docker'
 apply plugin: 'idea'
 apply plugin: 'findbugs'
-apply plugin: "scala"
 
 buildscript {
 	project.ext {
@@ -30,10 +29,40 @@ buildscript {
         classpath "se.transmode.gradle:gradle-docker:${project.gradleDockerVersion}"
     }
 }
+allprojects {
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+}
+
+task gatlingStatFlo(dependsOn: ':loadtest:loadTest') << {
+
+}
+
+
+subprojects {
+    apply plugin: 'scala'
+
+
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+        compile 'org.scala-lang:scala-library:2.11.8'
+    }
+}
+
 
 task createWrapper(type: Wrapper) {
     gradleVersion = '3.5'
 }
+
+
 
 
 
@@ -43,10 +72,6 @@ mainClassName = 'com.ahmed.UserApplication'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-repositories {
-    mavenCentral()
-    jcenter()
-}
 
 dependencyManagement {
   imports {
@@ -82,7 +107,6 @@ dependencies {
      compileOnly "org.projectlombok:lombok:1.16.16"
      testCompile("junit:junit")
     testCompile("org.springframework.boot:spring-boot-starter-test")
-    testCompile("io.gatling.highcharts:gatling-charts-highcharts:2.2.3")
 
 
 }
@@ -95,7 +119,7 @@ jar {
 
 /*
 * This task builds the docker image by copying the output of the "jar" gradle command
-* and moving it to the "build/docker" directory which is used as the staging directory 
+* and moving it to the "build/docker" directory which is used as the staging directory
 * by the docker gradle plugin. We then build the docker image by invoking the appropriate
 * Dockerfile.  
 */
@@ -125,18 +149,6 @@ task buildDocker(type: Docker, dependsOn: build) {
 
 }
 
-task loadTest(type: JavaExec) {
-    dependsOn testClasses
-    description = "load test with Gatling"
-    group = "Load Test"
-    classpath = sourceSets.test.runtimeClasspath
-    main = "io.gatling.app.Gatling"
-    args = [
-            "--simulation", "com.statflo.project.gatling.MainSimulation",
-            "--results-folder", "${buildDir}/gatling-results",
-            "--bodies-folder", sourceSets.test.resources.srcDirs.toList().first().toString() + "/gatling/bodies",
-    ]
-}
 
 run {
     jvmArgs = ['-Xdebug', '-Xrunjdwp:server=y,transport=dt_socket,address=4200,suspend=n','-Dspring.profiles.active=default']
